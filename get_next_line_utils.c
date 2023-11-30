@@ -12,6 +12,34 @@
 
 #include "libft.h"
 
+int	ft_findnl(char *buffer)
+{
+	int	i;
+
+	i = 0;
+	while (buffer[i])
+	{
+		if (buffer[i] == '\n')
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+char	*ft_strcpy(char *str1, char *str2)
+{
+	int	i;
+
+	i = 0;
+	while (str2[i])
+	{
+		str1[i] = str2[i];
+		i++;
+	}
+	str1[i] = '\0';
+	return (str1);
+}
+
 size_t	ft_gnl_strlen(const char *c)
 {
 	int	i;
@@ -20,34 +48,6 @@ size_t	ft_gnl_strlen(const char *c)
 	while (c[i])
 		i++;
 	return (i);
-}
-
-size_t	ft_gnl_strlcpy(char *dst, const char *src, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	if (size > 0)
-	{
-		while (src[i] && i < (size -1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	return (ft_gnl_strlen(src));
-}
-
-char	*ft_gnl_strdup(const char *s)
-{
-	char	*output;
-
-	output = malloc(ft_gnl_strlen(s) + 1);
-	if (output == NULL)
-		return (NULL);
-	ft_gnl_strlcpy(output, s, ft_gnl_strlen(s) + 1);
-	return (output);
 }
 
 void	*ft_gnl_calloc(size_t nmemb, size_t size)

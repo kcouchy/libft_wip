@@ -12,34 +12,6 @@
 
 #include "libft.h"
 
-int	ft_findnl(char *buffer)
-{
-	int	i;
-
-	i = 0;
-	while (buffer[i])
-	{
-		if (buffer[i] == '\n')
-			return (i);
-		i++;
-	}
-	return (-1);
-}
-
-char	*ft_strcpy(char *str1, char *str2)
-{
-	int	i;
-
-	i = 0;
-	while (str2[i])
-	{
-		str1[i] = str2[i];
-		i++;
-	}
-	str1[i] = '\0';
-	return (str1);
-}
-
 char	*ft_buff2line(char *line, char *buffer)
 {
 	int	find_nl;

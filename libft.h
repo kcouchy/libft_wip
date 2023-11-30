@@ -504,22 +504,6 @@ int	ft_printf(const char *input, ...);
 /******************************************************************************/
 
 /**
- * @brief Searches string buffer for a newline character '\n'.
- * @param buffer Input string.
- * @return int Returns index of \n if present or -1 if not found.
- */
-int		ft_findnl(char *buffer);
-
-/**
- * @brief Copies `str2` to `str1`. Takes the full size of `str2` and guarantee
- * to NUL-terminate the result.
- * @param str1 A pointer to a memory area.
- * @param str2 A string.
- * @return pointer to str1.
- */
-char	*ft_strcpy(char *str1, char *str2);
-
-/**
  * @brief Copies the contents of buffer (up to and including the first \n) into 
  * line (ft_strjoin). Resets the buffer to remove copied contents (ft_strcpy).
  * @param line A pointer to a memory area.
@@ -553,31 +537,28 @@ char	*get_next_line(int fd);
 /******************************************************************************/
 
 /**
+ * @brief Searches string buffer for a newline character '\n'.
+ * @param buffer Input string.
+ * @return int Returns index of \n if present or -1 if not found.
+ */
+int		ft_findnl(char *buffer);
+
+/**
+ * @brief Copies `str2` to `str1`. Takes the full size of `str2` and guarantee
+ * to NUL-terminate the result.
+ * @param str1 A pointer to a memory area.
+ * @param str2 A string.
+ * @return pointer to str1.
+ */
+char	*ft_strcpy(char *str1, char *str2);
+
+/**
  * @brief Calculates th length of `str`.
  * @param str A string.
  * @return The length of `str`.
  */
 size_t	ft_gnl_strlen(const char *c);
 
-/**
- * @brief Copies `src` to `dst`. Takes the full `size` of `dst` and guarantee
- * to NUL-terminate the result (as long as `size` is larger than 0). Note that a
- * byte for the NUL should be included in `size`. Can only operate on true "C"
- * strings. `src` must be NUL-terminated. Copies up to `size - 1` characters
- * from `src` to `dst`, NUL-terminating the result.
- * @param dst A pointer to a memory area.
- * @param src A string.
- * @param size The length of the string `ft_strlcopy` tries to create.
- * @return The length of `src`.
- */
-size_t	ft_gnl_strlcpy(char *dst, const char *src, size_t size);
-
-/**
- * @brief Allocates (with malloc(3)) and returns a copy of `str`.
- * @param str A string.
- * @return A copy of `str`.
- */
-char	*ft_gnl_strdup(const char *s);
 
 /**
  * @brief Allocates memory for an array of `nmemb` elements of size bytes each
