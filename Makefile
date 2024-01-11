@@ -6,7 +6,7 @@
 #    By: kcouchma <kcouchma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 10:04:34 by kcouchma          #+#    #+#              #
-#    Updated: 2023/11/13 10:31:08 by kcouchma         ###   ########.fr        #
+#    Updated: 2024/01/11 11:13:26 by kcouchma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRCS =								\
 				ft_memchr			\
 				ft_memcmp			\
 				ft_atoi				\
+				ft_atod				\
 				ft_strdup			\
 				ft_calloc			\
 				ft_substr			\

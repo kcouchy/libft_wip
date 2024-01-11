@@ -6,7 +6,7 @@
 /*   By: kcouchma <kcouchma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:45:14 by kcouchma          #+#    #+#             */
-/*   Updated: 2023/11/13 10:21:32 by kcouchma         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:13:06 by kcouchma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,6 +323,31 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
  * @return The converted value.
  */
 int		ft_atoi(const char *str);
+
+/**
+ * @brief Atod episode II - atoi with extra sauce (thank you norminette)
+ * Basically an atoi, with an extra step in the case of fract == 1.
+ * In this case, the double created is divided by 10 ^ its length using the i
+ * variable to track the number of digits. This creates the fraction part of 
+ * the double (the part to the right of the decimal point).
+ * @param argv input argument sent from ft_atod1 ('integer' or 'fraction' part)
+ * @param fract if integer then 0, if fraction then 1 (to run division cycle)
+ * @return double the integer or fraction part requested by ft_atod1
+ */
+double	ft_atod2(char **argv, int fract);
+
+/**
+ * @brief Atod episode I - the search for negs (thank you norminette)
+ * In this function, each argument is checked to see if it's negative or 
+ * positive, then stripped of the '-' or '+'. The string before the decimal (if
+ * present) if transferred using a modified atoi (ft_atod2) into the double 
+ * 'integer'. The decimal (if present) is then skipped and any remaining digits
+ * sent through the atoi into the double 'fraction'. The two are then added 
+ * together to create the output double.
+ * @param argv input argument sent from ft_atod.
+ * @return double constructed from the char * input.
+ */
+double	ft_atod1(char *argv);
 
 /**
  * @brief Allocates memory for an array of `nmemb` elements of size bytes each

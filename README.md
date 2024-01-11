@@ -1,5 +1,6 @@
 # libft
 Library of functions, will add to as the 42 cursus continues.
+From fract-ol: ft_atod (transforms char * input to double)
 
 
 # printf
