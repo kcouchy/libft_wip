@@ -6,7 +6,7 @@
 /*   By: kcouchma <kcouchma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:45:14 by kcouchma          #+#    #+#             */
-/*   Updated: 2024/01/11 11:13:06 by kcouchma         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:06:01 by kcouchma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -494,7 +494,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * @param str Input string to print.
  * @return int Number of characters printed to terminal.
  */
-int	print_string(char *str);
+int		ft_print_string(char *str);
 
 /**
  * @brief If type is %p, uses ft_putbase_fd equivalentto print it to terinmal.
@@ -503,6 +503,7 @@ int	print_string(char *str);
  * @param str Input pointer to print.
  * @return int Number of characters printed to terminal (including 0x).
  */
+int		ft_print_ptr(void *str);
 
 /**
  * @brief Function to dispatch printf flag inputs to their respective print 
@@ -513,7 +514,7 @@ int	print_string(char *str);
  * @param args Argument from va_list.
  * @return int Number of characters printed to the terminal.
  */
-int	ft_put_type(char type, va_list args);
+int		ft_put_type(char type, va_list args);
 
 /**
  * @brief Recode the printf() function from libc (man 3 printf).
@@ -522,7 +523,7 @@ int	ft_put_type(char type, va_list args);
  * @param ... variadic input
  * @return int 
  */
-int	ft_printf(const char *input, ...);
+int		ft_printf(const char *input, ...);
 
 /******************************************************************************/
 /* Projects - get_next_line                                                   */
@@ -583,7 +584,6 @@ char	*ft_strcpy(char *str1, char *str2);
  * @return The length of `str`.
  */
 size_t	ft_gnl_strlen(const char *c);
-
 
 /**
  * @brief Allocates memory for an array of `nmemb` elements of size bytes each
