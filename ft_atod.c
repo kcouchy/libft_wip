@@ -6,7 +6,7 @@
 /*   By: kcouchma <kcouchma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 16:14:33 by kcouchma          #+#    #+#             */
-/*   Updated: 2024/01/11 11:10:30 by kcouchma         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:06:18 by kcouchma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,3 @@ double	ft_atod1(char *argv)
 		return (-2147483649);
 	return (is_neg * (integer + fraction));
 }
-

@@ -6,7 +6,7 @@
 #    By: kcouchma <kcouchma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 10:04:34 by kcouchma          #+#    #+#              #
-#    Updated: 2024/01/11 11:13:26 by kcouchma         ###   ########.fr        #
+#    Updated: 2024/03/15 11:25:44 by kcouchma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,9 @@ SRCS =								\
 				ft_putnbr_fd		\
 				ft_putbase			\
 				ft_printf			\
+				gnl					\
 				get_next_line		\
-				get_next_line_utils \
+				get_next_line_utils 
 
 BONUS_SRCS =						\
 				ft_lstnew			\
@@ -60,7 +61,7 @@ BONUS_SRCS =						\
 				ft_lstdelone		\
 				ft_lstclear			\
 				ft_lstiter			\
-				ft_lstmap			\
+				ft_lstmap			
 
 INC_FILES = libft.h
 

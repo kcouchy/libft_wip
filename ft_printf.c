@@ -6,20 +6,20 @@
 /*   By: kcouchma <kcouchma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 11:19:27 by kcouchma          #+#    #+#             */
-/*   Updated: 2023/11/13 09:34:38 by kcouchma         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:41:23 by kcouchma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	print_string(char *str)
+int	ft_print_string(char *str)
 {
 	if (!str)
 		return (ft_putstr_fd("(null)", 1));
 	return (ft_putstr_fd(str, 1));
 }
 
-int	print_ptr(void *str)
+int	ft_print_ptr(void *str)
 {
 	if (!str)
 		return (ft_putstr_fd("(nil)", 1));
@@ -32,9 +32,9 @@ int	ft_put_type(char type, va_list args)
 	if (type == 'c')
 		return (ft_putchar_fd(va_arg(args, int), 1));
 	else if (type == 's')
-		return (print_string(va_arg(args, char *)));
+		return (ft_print_string(va_arg(args, char *)));
 	else if (type == 'p')
-		return (print_ptr(va_arg(args, void *)));
+		return (ft_print_ptr(va_arg(args, void *)));
 	else if (type == 'i' || type == 'd')
 		return (ft_putnbr_fd(va_arg(args, int), 1));
 	else if (type == 'u')

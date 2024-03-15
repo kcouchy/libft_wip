@@ -6,7 +6,7 @@
 /*   By: kcouchma <kcouchma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:45:14 by kcouchma          #+#    #+#             */
-/*   Updated: 2024/01/11 15:06:01 by kcouchma         ###   ########.fr       */
+/*   Updated: 2024/03/15 11:27:28 by kcouchma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 /* includes                                                                   */
 /******************************************************************************/
 
-# include <unistd.h>	/*size_t (unsigned long)*/
-# include <stdlib.h>	/*malloc/free/calloc etc*/
-# include <fcntl.h>		/*open*/
-# include <stdio.h>		/*printf*/
-# include <stdarg.h>	/*va_arg macros*/
+# include <unistd.h>			/*size_t (unsigned long)*/
+# include <stdlib.h>			/*malloc/free/calloc etc*/
+# include <fcntl.h>				/*open*/
+# include <stdio.h>				/*printf*/
+# include <stdarg.h>			/*va_arg macros*/
 
 /******************************************************************************/
 /* variables                                                                  */
@@ -133,7 +133,8 @@ char	*ft_strrchr(const char *s, int c);
  * @param str_1 A string.
  * @param str_2 A string.
  * @param n The max ammount of characters to compare.
- * @return The lexical order of the two strings.ft_lstdelone
+ * @return The lexical order of the two strings (ascii value difference of the 
+ * first diverging character: 0 if identical).
  */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
@@ -262,6 +263,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
  * @return char* The new string, or NULL if the allocation fails.
  */
 char	*ft_strjoin(char const *s1, char const *s2);
+
+/**
+ * @brief Allocates (with malloc(3)) and returns a new string, which is the
+ * result of the concatenation of ’s1’ and ’s2’. Also frees any combination of
+ * s1 and s2.
+ * @param s1 The prefix string.
+ * @param s2 The suffix string.
+ * @param freee 0 = no frees ; 1 or 2 = frees s1 or s2 ; 3 = frees both s1 & s2
+ * @return char* The new string, or NULL if the allocation fails.
+ */
+char	*ft_strjoinf(char const *s1, char const *s2, int freee);
 
 /**
  * @brief Allocates (with malloc(3)) and returns a copy of ’s1’ with the
@@ -551,12 +563,26 @@ char	*ft_buff2line(char *line, char *buffer);
 char	*ft_read2buff(char *line, char *buffer, int fd);
 
 /**
- * @brief Returns a line read from a file descriptor.
+ * @brief Returns a line read from a file descriptor. Can handle up to 1024
+ * file descriptors.
  * @param fd The file descriptor to read from.
- * @return char * Read line: correct behavior or NULL: there is nothing else 
+ * @return char * The line that was read or NULL if there is nothing else 
  * to read, or an error occurred.
  */
 char	*get_next_line(int fd);
+
+/******************************************************************************/
+/* gnl.c                                                                      */
+/******************************************************************************/
+
+/**
+ * @brief Simple version of get_next_line, returns a line read from a file 
+ * descriptor. Can only handle one fd at a time.
+ * @param fd The file descriptor to read from.
+ * @return char * The line that was read or NULL if there is nothing else 
+ * to read, or an error occurred.
+ */
+char	*gnl(int fd);
 
 /******************************************************************************/
 /* Projects - get_next_line_utils                                             */
@@ -606,4 +632,5 @@ void	*ft_gnl_calloc(size_t nmemb, size_t size);
  * @return char* The new string, or NULL if the allocation fails.
  */
 char	*ft_gnl_strjoin(char *s1, char *s2);
+
 #endif
