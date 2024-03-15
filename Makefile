@@ -71,7 +71,7 @@ OBJ = $(addsuffix .o,$(SRCS))
 BOBJ = $(addsuffix .o,$(BONUS_SRCS))
 
 CC = cc
-CCFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
@@ -81,7 +81,7 @@ $(NAME) : $(OBJ)
 	ar rcs $@ $^
 
 %.o: %.c
-	$(CC) -c $< -o $@ $(CCFLAGS)
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 bonus : $(OBJ) $(BOBJ)
 	ar rcs $(NAME) $^
