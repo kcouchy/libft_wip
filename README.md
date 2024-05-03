@@ -1,7 +1,6 @@
 # libft
 Library of functions, will add to as the 42 cursus continues.
-From fract-ol: ft_atod (transforms char * input to double)
-
+Includes: 
 
 # printf
 
@@ -25,3 +24,6 @@ A function that returns a line read from a file descriptor.
  • The code is compiled as follows (a buffer size of 42 is used as an example): cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 <files>.c  
  • Only one static variable is used.  
  • Can manage multiple file descriptors at the same time.  
+
+
+From fract-ol: ft_atod (transforms char * input to double)
